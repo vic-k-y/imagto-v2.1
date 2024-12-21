@@ -1,0 +1,138 @@
+@media (max-width: 75rem) {
+  .model-div {
+    flex-direction: column;
+    align-items: start;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .div-style-imgSize {
+    align-items: start;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 62.5rem) {
+  .nav-h1 {
+    font-size: 3rem;
+  }
+  .nav-h2 {
+    font-size: 1.8rem;
+  }
+  .nav-signOut {
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0.5rem;
+  }
+
+  .model-choice {
+    max-width: 100%;
+    /* field-sizing: content; */
+  }
+
+  .common-flex-alignCenter {
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .div-cfg-seed,
+  .div-upscale-sampler {
+    flex-direction: column;
+    align-items: start;
+  }
+  .div-seed,
+  .div-cfg {
+    width: 100%;
+  }
+
+  .output-h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 56.5rem) {
+  .div-image-size {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+  }
+}
+
+@media (max-width: 48.8rem) {
+  .app {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav-div-h1 {
+    margin-left: 1rem;
+  }
+  .input,
+  .output {
+    width: 100%;
+    margin: auto;
+  }
+
+  .model-div,
+  .div-cfg-seed,
+  .div-image-size,
+  .div-style-imgSize,
+  .div-upscale-sampler {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 36.5rem) {
+  .nav-h1 {
+    font-size: 2.5rem;
+  }
+  .nav-div-h1-p {
+    font-size: 1.2rem;
+  }
+  .model-div,
+  .div-cfg-seed,
+  .div-image-size {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 30.7rem) {
+  .nav-h2 {
+    font-size: 1.5rem;
+  }
+  .model-div,
+  .div-cfg-seed,
+  .div-image-size,
+  .div-style-imgSize,
+  .div-upscale-sampler {
+    flex-direction: column;
+    align-items: start;
+  }
+  .div-image-size {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 25rem) {
+  .nav {
+    padding: 0.5rem;
+  }
+  .nav-h1 {
+    font-size: 2.5rem;
+    /* chinging font size to make it look good on mobile. */
+  }
+  .nav-h2 {
+    font-size: 1.7rem;
+  }
+  .nav-signOut {
+    font-size: 1.2rem;
+  }
+
+  .div-image-size {
+    flex-direction: column;
+    align-items: start;
+  }
+}
