@@ -120,12 +120,15 @@
   .nav {
     padding: 0.5rem;
   }
+  .nav-div-h1-p {
+    font-size: 1rem;
+  }
   .nav-h1 {
     font-size: 2.5rem;
     /* chinging font size to make it look good on mobile. */
   }
   .nav-h2 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .nav-signOut {
     font-size: 1.2rem;

@@ -123,11 +123,7 @@ const appIntersection = function (entries) {
   const entry = entries[0];
   if (entry.isIntersecting) {
     document.body.classList.add("nav-sticky");
-    // how this works when the intersection observer triggered
-    // nav-sticky is added to body which is parent element of nav and app element
-    // in css when body element has nav-sticky class the sticky attributes (css = .nav-sticky .nav)
-    // will be added to nav element and in app element (css = .nav-sticky .app) will added which has margin of nav elements
-    // height to app element. this will make sure the big jump doesnt happen.
+    // how this works check notes.
   }
   if (!entry.isIntersecting) {
     document.body.classList.remove("nav-sticky");
@@ -139,7 +135,6 @@ const appObserv = new IntersectionObserver(appIntersection, {
   // rootMargin: "-68px",
 });
 
-// appObserv.observe(app);
 appObserv.observe(exampleSec);
 
 // -------- listing models -------------
@@ -208,33 +203,14 @@ stepsInput.forEach((e) => {
 // ====================
 
 const url = "https://fastapi-uyvt.onrender.com/generate";
-// const url = "https://127.0.0.1:8000"; // Your FastAPI server endpoint
 
-// fetch(url, {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify({
-//     model: "v1-5-pruned-emaonly.safetensors [d7049739]",
-//     prompt: "puppies in a cloud, 4k",
-//     negative_prompt: "badly drawn",
-//     style_preset: "line-art",
-//     steps: 20,
-//     cfg_scale: 7,
-//     seed: -1,
-//     upscale: false,
-//     sampler: "DPM++ 2M Karras",
-//     width: 512,
-//     height: 512,
-//   }),
-// })
-//   .then((res) => res.json())
-//   .then((data) => console.log(data.imageUrl))
-//   .catch((error) =>
-//     console.error("There was a problem with the fetch operation:", error)
-//   );
-
+const setOutImgContent = function (src) {
+  outImgPrt.innerHTML = "";
+  const ele = document.createElement("img");
+  ele.classList.add("image");
+  ele.src = src;
+  return ele;
+};
 const options = {
   method: "POST",
   headers: {
@@ -297,7 +273,7 @@ submit.addEventListener("click", async (e) => {
     height: Number(b),
   };
   try {
-    // const img = await getimage(data);
+    const img = await getimage(data);
   } catch (err) {
     outImgPrt.innerHTML = err;
   }
@@ -307,29 +283,4 @@ reset.addEventListener("click", (e) => {
   outImgPrt.innerHTML = "<p>Type something and click submit.</p>";
 });
 
-// loading image ==
-
 outImgPrt.innerHTML = "<p>Type something and click submit.</p>";
-
-const setOutImgContent = function (src) {
-  outImgPrt.innerHTML = "";
-  const ele = document.createElement("img");
-  ele.classList.add("image");
-  ele.src = src;
-  return ele;
-};
-
-// let dd = "full square [512x512]";
-// dd = dd.split(" ");
-// dd = dd.slice(-1)[0];
-// dd = dd.replace(/[\[\]x]/g, " ");
-// // (/[\[\]\$]/g, "*")
-// console.log(dd);
-
-// let dd = "Square (512x512)";
-// let dd = "Full Square (1024x1024)";
-// let dd = "Horizontal Rectangle (1024x768)";
-// let dd = "Vertical Rectangle (768x1024)";
-// let dd = "Wide Banner (1024x512)";
-// let dd = "Small Rectangle (512x1024)";
-// let dd = imgSize.value;
