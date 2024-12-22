@@ -202,7 +202,8 @@ stepsInput.forEach((e) => {
 
 // ====================
 
-const url = "https://fastapi-uyvt.onrender.com/generate";
+// const url = "https://fastapi-uyvt.onrender.com/generate";
+const url = "https://leading-lizard-vickyji-ae49a884.koyeb.app/generate";
 
 const setOutImgContent = function (src) {
   outImgPrt.innerHTML = "";
