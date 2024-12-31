@@ -11,342 +11,103 @@
       rel="stylesheet"
     />
 
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/media-queries.css" rel="stylesheet" />
-
-    <script defer src="script.js"></script>
-    <title>ImagTo</title>
+    <link href="css/index.css" rel="stylesheet" />
+    <script defer type="module" src="js/index.js"></script>
+    <link href="img/white_on_trans.webp" rel="icon" type="image/webp" />
+    <title>Login</title>
   </head>
-  <body class="body">
-    <nav class="nav">
-      <div class="nav-div-h1">
-        <h1 class="nav-h1 hanuman-bold">ImagTo</h1>
-        <p class="nav-div-h1-p">Generate images from your thoughts.</p>
-      </div>
-
-      <!-- <h2 class="nav-h2 hanuman-bold">Hi, Welcome</h2>
-      <a class="nav-signOut hanuman-regular">signOut</a> -->
-    </nav>
-    <!-- <div class="main"> -->
-    <div class="app noto-sans-400">
-      <div class="input border-updown-margin box-shadow">
-        <form class="form">
-          <div class="model-div border-updown-margin">
-            <label class="model-label" for="model-select"
-              >Choose a model: </label
-            ><select
-              class="model-choice for-choice-prompt-p"
-              id="model-select"
-              title="Select a AI model"
-            >
-              <option selected>
-                Realistic_Vision_V5.0.safetensors [614d1063]
-              </option>
-            </select>
-          </div>
-
-          <div class="div-style-imgSize border-updown-margin">
-            <div class="div-style-preset">
-              <label class="style-preset-lable" for="style-preset"
-                >Select style:</label
-              ><select
-                class="style-preset for-choice-prompt-p"
-                id="style-preset"
-                title="select"
-              >
-                <option selected>photographic</option>
-              </select>
-            </div>
-            <div class="div-image-size">
-              <label class="image-size-label" for="image-size"
-                >Choose a image size: </label
-              ><select
-                class="image-size for-choice-prompt-p"
-                id="image-size"
-                title="image-size"
-              >
-                <option>Full Square (1024x1024)</option>
-                <option>Horizontal Rectangle (1024x768)</option>
-                <option selected>Square (512x512)</option>
-                <option>Small Rectangle (512x1024)</option>
-                <option>Wide Banner (1024x512)</option>
-                <option>Vertical Rectangle (768x1024)</option>
-              </select>
-            </div>
-          </div>
-          <div class="div-prompts border-updown-margin">
-            <label for="prompt">Prompt: </label>
-            <textarea
-              class="Pprompt prompt for-choice-prompt-p"
-              type="text"
-              id="prompt"
-              name="name"
-              placeholder="Enter your prompt"
-              cols="50%"
-              rows="4"
-              spellcheck="false"
-              required
-            ></textarea>
-          </div>
-          <div class="div-prompts border-updown-margin">
-            <label for="Negative prompt">Negative Prompt: </label>
-
-            <textarea
-              class="Nprompt prompt for-choice-prompt-p"
-              type="text"
-              id="Negative prompt"
-              rows="2"
-              placeholder="Enter your Negative prompt"
-              spellcheck="false"
-            ></textarea>
-          </div>
-          <div class="div-steps border-updown-margin">
-            <label for="steps">Steps:</label>
-            <input
-              class="steps-input slider"
-              type="range"
-              id="steps"
-              name="Steps"
-              min="1"
-              max="20"
-              value="15"
-            />
-            <p class="steps-p for-choice-prompt-p">15</p>
-          </div>
-
-          <div
-            class="div-cfg-seed common-flex-alignCenter border-updown-margin"
-          >
-            <div class="div-cfg common-flex-alignCenter">
-              <label class="cfg-label" for="CFG-Scale">CFG-Scale:</label>
-              <input
-                class="cfg-input slider"
-                type="range"
-                id="CFG-Scale"
-                name="CFG-Scale"
-                min="0"
-                max="20"
-                value="7"
-              />
-              <p class="cfg-p for-choice-prompt-p">7</p>
-            </div>
-            <div class="div-seed common-flex-alignCenter">
-              <label class="seed-label" for="seed">Seed:</label>
-              <input
-                class="seed-input slider"
-                type="range"
-                id="seed"
-                name="seed"
-                min="-1"
-                max="20"
-                value="-1"
-              />
-              <p class="seed-p for-choice-prompt-p">-1</p>
-            </div>
-          </div>
-          <div
-            class="div-upscale-sampler common-flex-alignCenter border-updown-margin"
-          >
-            <!-- <div class="div-upscale-sampler"> -->
-            <div class="div-upscale common-flex-alignCenter">
-              <input
-                class="upscale-input for-choice-prompt-p"
-                type="checkbox"
-                id="upscale"
-                name="upscale"
-              />
-              <label class="upscale-label" for="upscale">upscale 2X</label>
-            </div>
-            <div class="div-sampler common-flex-alignCenter">
-              <label class="sampler-label" for="sampler">Select sampler:</label>
-              <select
-                class="sampler-input for-choice-prompt-p"
-                id="sampler"
-                title="sampler"
-              >
-                <option>DDIM</option>
-                <option>Euler</option>
-                <option>Euler a</option>
-                <option>Heun</option>
-                <option>DPM++ SDE Karras</option>
-                <option selected>DPM++ 2M Karras</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-btn common-flex-alignCenter border-updown-margin">
-            <input class="btn-reset" type="reset" value="Reset" />
-            <input class="btn-submit" type="submit" value="Submit" />
-          </div>
-        </form>
-      </div>
-      <div class="output hanuman-bold">
-        <div class="div-output border-updown-margin box-shadow">
-          <h2 class="output-h2">OUTPUT:</h2>
-          <div class="div-output-img">
-            <!-- <img class="image" alt="img" src="R.jpeg" /> -->
-          </div>
-        </div>
-
-        <div
-          class="previous-img-container border-updown-margin hanuman-bold box-shadow"
+  <body class="login-body">
+    <div class="loading-div loading-div-inactive hanuman-bold">
+      <svg>
+        <text x="50%" y="50%" dy=".35em" text-anchor="middle">ImagTo</text>
+      </svg>
+    </div>
+    <div class="alert"></div>
+    <div class="container noto-sans-400">
+      <img class="logoImg" alt="logo" src="img/white_on_trans.webp" />
+      <div class="top-btns">
+        <button class="signup-btn-t btn noto-sans-400" type="button">
+          sign up
+        </button>
+        <button
+          class="signin-btn-t btn noto-sans-400 inactive-btn"
+          type="button"
         >
-          <h2 class="output-h2">PREVIOUSLY GENERATED IMAGES:</h2>
-          <div class="div-previous-imgs">
-            <!-- <img
-              class="image"
-              alt="img"
-              src="https://www.sciencealert.com/images/2022/09/jwst-orion-heart-full-size.jpg"
-            /> -->
-            <img
-              class="previous-image image"
-              alt="img"
-              src="img/image (1).png"
-            />
-            <img
-              class="previous-image image"
-              alt="img"
-              src="img/image (2).png"
-            />
-            <img
-              class="previous-image image"
-              alt="img"
-              src="img/image (3).png"
-            />
-            <img
-              class="previous-image image"
-              alt="img"
-              src="img/image (4).png"
-            />
-            <img
-              class="previous-image image"
-              alt="img"
-              src="img/image (5).png"
-            />
-            <img
-              class="previous-image image"
-              alt="img"
-              src="img/image (6).png"
-            />
-            <img class="previous-image image" alt="img" src="img/image.png" />
-          </div>
+          sign in
+        </button>
+      </div>
+      <form class="signup-form active">
+        <div class="name-div common">
+          <label for="fullname">Full Name:</label>
+          <input
+            class="signup-name-input hanuman-regular"
+            id="fullname"
+            type="text"
+            required
+            placeholder="Enter your full name"
+          />
         </div>
-      </div>
+        <div class="signup-email-div common">
+          <label for="email-signup">Email:</label>
+          <input
+            class="signup-email-input hanuman-regular"
+            id="email-signup"
+            type="email"
+            required
+            placeholder="Enter your Email"
+          />
+        </div>
+        <div class="signup-password-div common">
+          <label for="password-signup">password:</label>
+          <input
+            class="signup-password-input hanuman-regular"
+            id="password-signup"
+            type="password"
+            minlength="8"
+            maxlength="20"
+            required
+            placeholder="Enter your password"
+          />
+        </div>
+        <button class="signup-btn-b btn noto-sans-400" type="submit">
+          Create Account
+        </button>
+      </form>
+      <form class="signin-form noto-sans-400 inactive">
+        <div class="signin-email-div common">
+          <label for="email-signin">Email:</label>
+          <input
+            class="signin-email-input hanuman-regular"
+            title="Email is required"
+            id="email-signin"
+            type="email"
+            required
+            placeholder="Enter your Email"
+          />
+        </div>
+        <div class="signin-password-div common">
+          <label for="password-signin">password:</label>
+          <input
+            class="signin-password-input hanuman-regular"
+            id="password-signin"
+            type="password"
+            required
+            placeholder="Enter your password"
+          />
+        </div>
+        <a class="forgot-pass" href="#">Forgot password ?</a>
+        <button class="signin-btn-b btn noto-sans-400" type="submit">
+          Login
+        </button>
+      </form>
     </div>
-    <!-- </div> -->
-    <div class="try border-updown-margin box-shadow">
-      <h2 class="try-h2 hanuman-black">Try these prompts:</h2>
-      <div class="example-prompts">
-        <table class="ex-table">
-          <thead class="ex-thead hanuman-bold">
-            <tr>
-              <th scope="col">Model</th>
-              <th scope="col">Prompt</th>
-              <th scope="col">Negative promt</th>
-              <th scope="col">style</th>
-              <th scope="col">Image size</th>
-              <th scope="col">steps</th>
-              <th scope="col">CFG-scale</th>
-              <th scope="col">seed</th>
-              <th scope="col">upscale</th>
-              <th scope="col">sampler</th>
-            </tr>
-          </thead>
-          <tbody class="ex-tbody noto-sans-400">
-            <tr>
-              <td>deliberate_v3.safetensors [afd9d2d4]</td>
-              <td>
-                score_9, score_8_up, score_7_up, cinematic film still, beautiful
-                woman, no make up, winter outfit, blush, black hair, head tilt,
-                hair blowing in the wind, arctic circle snow drift, snowing,
-                snowflakes, cold, chill bumps, approaching perfection, dynamic,
-                highly detailed, smooth, sharp focus, intricate details, shallow
-                depth of field, vignette, high budget, bokeh, cinemascope,
-                moody, epic, gorgeous, film grain, grainy
-              </td>
-              <td>
-                score_6, score_5, score_4, (worst quality:1.2), (low
-                quality:1.2), (normal quality:1.2), lowres, bad anatomy, bad
-                hands, signature, watermarks, ugly, imperfect eyes, skewed eyes,
-                unnatural face, unnatural body, error, extra limb, missing limbs
-              </td>
-              <td>enhance</td>
-              <td>Square (512x512)</td>
-              <td>16</td>
-              <td>8</td>
-              <td>-1</td>
-              <td>true</td>
-              <td>DPM++ SDE Karras</td>
-            </tr>
-            <tr>
-              <td>rundiffusionFX_v10.safetensors [cd4e694d]</td>
-              <td>
-                A graffitipunk digital shot of a towering figure with armor made
-                of fragmented shadows, bits of their form flickering like dying
-                embers. Their hollow eyes stare into the distance, and they
-                wield a massive, cleaver-like blade that seems almost too heavy
-                to lift. Faint, eerie light shines through fractures in their
-                armor, exposing ghostly ribs beneath. Around them, smaller
-                phantoms drift as though bound to the warrior’s very soul. The
-                background is a crumbling gothic ruin shrouded in mist, where
-                shadows dance in the broken arches.
-              </td>
-              <td>
-                error, cropped, ugly, duplicate, out of frame, extra fingers,
-                mutated hands, poorly drawn hands, poorly drawn face, mutation,
-                bad anatomy, bad proportions, extra limbs, cloned face,
-                disfigured, gross proportions, malformed limbs, missing arms,
-                missing legs, black and white filter, green color,nude, erotic
-              </td>
-              <td>cinematic</td>
-              <td>Full Square (1024x1024)</td>
-              <td>15</td>
-              <td>7</td>
-              <td>-1</td>
-              <td>false</td>
-              <td>Euler</td>
-            </tr>
-            <tr>
-              <td>dreamshaper_8.safetensors [9d40847d]</td>
-              <td>
-                This is an artheon style painting that merges the surreal with
-                the abstract. The scene depicts a woman dressed in a loose,
-                flowing white shroud. She is submerged in water. Only her head
-                is above the water surface. Her skin is a pale, almost
-                translucent white, with dark, wet hair that cascades down her
-                back. The woman appears to be in a state of deep contemplation,
-                her eyes closed and her face expressionless. Under her chin an
-                intricate, colorful bouquet of flowers is floating. The flowers
-                include vibrant pink, yellow, and white blossoms with green
-                leaves, adding a striking contrast to her pale skin. Long, dark
-                green tendrils of seaweed-like material also descend underwater
-                from the flowers, giving a sense of movement and fluidity. The
-                background is a muted, earthy brown, with visible cracks and
-                peeling paint, suggesting an aged, weathered surface. The water
-                around the woman is a deep, rich green, with subtle reflections
-                and ripples that enhance the sense of depth and immersion. The
-                overall composition is balanced and harmonious, blending the
-                serene, almost ethereal quality of the woman with the rugged,
-                textured background.
-              </td>
-              <td>
-                asian, chinese, afro american, error, cropped, ugly, duplicate,
-                out of frame, extra fingers, mutated hands, poorly drawn hands,
-                poorly drawn face, mutation, bad anatomy, bad proportions, extra
-                limbs, cloned face, disfigured, gross proportions, malformed
-                limbs, missing arms, missing legs, black and white filter, green
-                color,nude, erotic
-              </td>
-              <td>cinematic</td>
-              <td>Square (512x512)</td>
-              <td>17</td>
-              <td>8</td>
-              <td>-1</td>
-              <td>true</td>
-              <td>DPM++ 2M Karras</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
