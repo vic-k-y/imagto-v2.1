@@ -84,11 +84,20 @@
 }
 
 @media (max-width: 36.5rem) {
+  .loading-div svg text {
+    font-size: 4rem;
+  }
   .nav-h1 {
     font-size: 2.5rem;
   }
   .nav-div-h1-p {
     font-size: 1.2rem;
+  }
+  .intro-div-top {
+    display: none;
+  }
+  .intro-div-below {
+    display: flex;
   }
   .model-div,
   .div-cfg-seed,
@@ -117,6 +126,9 @@
 }
 
 @media (max-width: 25rem) {
+  .loading-div svg text {
+    font-size: 3rem;
+  }
   .nav {
     padding: 0.5rem;
   }
