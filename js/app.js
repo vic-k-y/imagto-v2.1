@@ -17,6 +17,7 @@ import {
   renderInputFlex,
   API_URL_FLUX,
   base64ToBlob,
+  timerInRace,
 } from "./config.js";
 
 import { initializeApp } from "firebase/app";
@@ -238,7 +239,7 @@ const setOutImgContent = function (src) {
   return ele;
 };
 
-const url = API_URL;
+// const url = API_URL;
 // take all input para and fetch that image and prepend it to output image element.
 const getimage = async function (para, isFlex = true) {
   try {
@@ -272,7 +273,7 @@ const getimage = async function (para, isFlex = true) {
     setOutImgContent(out);
     return out;
   } catch (err) {
-    outImgPrt.innerHTML = err;
+    // outImgPrt.innerHTML = err;
     throw err;
   }
 };
@@ -484,10 +485,10 @@ form.addEventListener("submit", async (e) => {
 
   try {
     // from fetch image to prepend it to html element - getimage will do.
-    const img = await getimage(
-      isCurModalFlux ? dataFlux : data,
-      isCurModalFlux
-    );
+    const img = await Promise.race([
+      getimage(isCurModalFlux ? dataFlux : data, isCurModalFlux),
+      timerInRace(50),
+    ]);
     await (isCurModalFlux
       ? addImgToPreviousImg(`data:image/jpeg;base64,${img}`)
       : addImgToPreviousImg(img));
@@ -510,9 +511,12 @@ form.addEventListener("submit", async (e) => {
 });
 
 // reset btn ------------
-reset.addEventListener("click", (e) => {
+form.addEventListener("reset", (e) => {
   outImgPrt.innerHTML = "<p>Type something and click submit.</p>";
 });
+// reset.addEventListener("click", (e) => {
+//   outImgPrt.innerHTML = "<p>Type something and click submit.</p>";
+// });
 
 // --------- signout btn ------
 signoutBtn.addEventListener("click", () => {

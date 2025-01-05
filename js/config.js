@@ -35,6 +35,14 @@ export const timer = function (sec) {
   }, sec * 1000);
 };
 
+export const timerInRace = function (sec) {
+  return new Promise(function (_, reject) {
+    setTimeout((e) => {
+      reject(new Error("Request timeout try again."));
+    }, sec * 1000);
+  });
+};
+
 export const addLoading = function () {
   // console.log("add loader");
   document
