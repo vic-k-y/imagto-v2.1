@@ -4,9 +4,9 @@
   "description": "user account feature",
   "main": "index.html",
   "scripts": {
-    "start": "vite",
+    "start": "vite --host 127.0.0.1 --port 5550",
     "build": "vite build",
-    "preview": "vite preview --host 127.0.0.1 --port 5500"
+    "preview": "vite preview  --host 127.0.0.1 --port 5500"
   },
   "author": "vic",
   "license": "ISC",

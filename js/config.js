@@ -1,6 +1,7 @@
 const env = import.meta.env;
 
 export const API_URL = env.VITE_API_URL;
+export const API_URL_FLUX = env.VITE_API_URL_FLEX;
 
 export const firebaseConfig = {
   apiKey: env.VITE_apiKey,
@@ -96,6 +97,27 @@ export const imageurlToblob = async function (url) {
   }
 };
 
+export const base64ToBlob = function (base64, mimeType = "image/jpeg") {
+  // Clean and standardize the Base64 string
+  const cleanedBase64 = base64.replace(/[^A-Za-z0-9+/=]/g, "");
+  const standardBase64 = cleanedBase64.replace(/-/g, "+").replace(/_/g, "/");
+
+  // Decode Base64 string
+  try {
+    const byteCharacters = atob(standardBase64);
+    const byteNumbers = new Array(byteCharacters.length)
+      .fill()
+      .map((_, i) => byteCharacters.charCodeAt(i));
+    const byteArray = new Uint8Array(byteNumbers);
+
+    // Create a Blob from the byte array
+    return new Blob([byteArray], { type: mimeType });
+  } catch (error) {
+    console.error("Failed to decode Base64:", error);
+    return null;
+  }
+};
+
 export const models = [
   "3Guofeng3_v34.safetensors [50f420de]",
   "absolutereality_V16.safetensors [37db0fc3]",
@@ -182,3 +204,274 @@ export const styles = [
   "texture",
   "craft-clay",
 ];
+
+export const renderInputOther = function (chosenForm) {
+  // document.querySelector(".form").innerHTML = "";
+  const markupOther = `
+          <div class="model-div border-updown-margin">
+            <label class="model-label" for="model-select"
+              >Choose a model: </label
+            ><select
+              class="model-choice for-choice-prompt-p"
+              id="model-select"
+              title="Select a AI model"
+              name="model"
+            >
+              <option selected>
+                Realistic_Vision_V5.0.safetensors [614d1063]
+              </option>
+              ${models
+                .map((i) => {
+                  return `<option>${i}</option>`;
+                })
+                .join("")}
+            </select>
+          </div>
+
+          <div class="div-style-imgSize border-updown-margin">
+            <div class="div-style-preset">
+              <label class="style-preset-lable" for="style_preset-select"
+                >Select style:</label
+              ><select
+                class="style-preset for-choice-prompt-p"
+                id="style_preset-select"
+                title="select"
+                name="style_preset"
+              >
+                <option selected>photographic</option>
+                ${styles
+                  .map((i) => {
+                    return `<option>${i}</option>`;
+                  })
+                  .join("")}
+              </select>
+            </div>
+            <div class="div-image-size">
+              <label class="image-size-label" for="image_size-select"
+                >Choose a image size: </label
+              ><select
+                class="image-size for-choice-prompt-p"
+                id="image_size-select"
+                title="image-size"
+                name="image_size"
+              >
+                <option>Full Square (1024x1024)</option>
+                <option>Horizontal Rectangle (1024x768)</option>
+                <option selected>Square (512x512)</option>
+                <option>Small Rectangle (512x1024)</option>
+                <option>Wide Banner (1024x512)</option>
+                <option>Vertical Rectangle (768x1024)</option>
+              </select>
+            </div>
+          </div>
+          <div class="div-prompts border-updown-margin">
+            <label for="prompt-select">Prompt: </label>
+            <textarea
+              title="Type the discription of an image of your choice."
+              class="Pprompt prompt for-choice-prompt-p"
+              type="text"
+              id="prompt-select"
+              name="prompt"
+              placeholder="Enter your prompt"
+              cols="50%"
+              rows="4"
+              spellcheck="false"
+              required
+            ></textarea>
+          </div>
+          <div class="div-prompts border-updown-margin">
+            <label for="negative_prompt-select">Negative Prompt: </label>
+
+            <textarea
+              class="Nprompt prompt for-choice-prompt-p"
+              type="text"
+              id="negative_prompt-select"
+              rows="2"
+              placeholder="Enter your Negative prompt"
+              spellcheck="false"
+              name="negative_prompt"
+            ></textarea>
+          </div>
+          <div class="div-steps border-updown-margin">
+            <label for="steps-select">Steps:</label>
+            <input
+              class="steps-input slider"
+              type="range"
+              id="steps-select"
+              name="steps"
+              min="1"
+              max="20"
+              value="15"
+            />
+            <p class="steps-p for-choice-prompt-p">15</p>
+          </div>
+
+          <div
+            class="div-cfg-seed common-flex-alignCenter border-updown-margin"
+          >
+            <div class="div-cfg common-flex-alignCenter">
+              <label class="cfg-label" for="cfg_scale-select">CFG-Scale:</label>
+              <input
+                class="cfg-input slider"
+                type="range"
+                id="cfg_scale-select"
+                name="cfg_scale"
+                min="0"
+                max="20"
+                value="7"
+              />
+              <p class="cfg-p for-choice-prompt-p">7</p>
+            </div>
+            <div class="div-seed common-flex-alignCenter">
+              <label class="seed-label" for="seed-select">Seed:</label>
+              <input
+                class="seed-input slider"
+                type="range"
+                id="seed-select"
+                name="seed"
+                min="-1"
+                max="20"
+                value="-1"
+              />
+              <p class="seed-p for-choice-prompt-p">-1</p>
+            </div>
+          </div>
+          <div
+            class="div-upscale-sampler common-flex-alignCenter border-updown-margin"
+          >
+            <div class="div-upscale common-flex-alignCenter">
+              <input
+                class="upscale-input for-choice-prompt-p"
+                type="checkbox"
+                id="upscale-select"
+                name="upscale"
+              />
+              <label class="upscale-label" for="upscale-select">upscale 2X</label>
+            </div>
+            <div class="div-sampler common-flex-alignCenter">
+              <label class="sampler-label" for="sampler-select">Select sampler:</label>
+              <select
+                class="sampler-input for-choice-prompt-p"
+                id="sampler-select"
+                title="sampler"
+                name="sampler"
+              >
+                <option>DDIM</option>
+                <option>Euler</option>
+                <option>Euler a</option>
+                <option>Heun</option>
+                <option>DPM++ SDE Karras</option>
+                <option selected>DPM++ 2M Karras</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-btn common-flex-alignCenter border-updown-margin">
+            <input class="btn-reset" type="reset" value="Reset" />
+            <input class="btn-submit" type="submit" value="Submit" />
+          </div>`;
+  return markupOther;
+};
+
+export const renderInputFlex = function (chosenForm) {
+  // document.querySelector(".form").innerHTML = "";
+  const markupFlux = `
+          <div class="model-div border-updown-margin">
+            <label class="model-label" for="model-select"
+              >Choose a model: </label
+            ><select
+              class="model-choice for-choice-prompt-p"
+              id="model-select"
+              title="Select a AI model"
+              name="model"
+            >
+              <option selected>
+                black-forest-labs/FLUX.1-schnell-Free
+              </option>
+            </select>
+          </div>
+
+          <div class="div-style-imgSize border-updown-margin">
+            <div class="div-image-size">
+              <label class="image-size-label" for="image-size"
+                >Choose a image size: </label
+              ><select
+                class="image-size for-choice-prompt-p"
+                id="image-size"
+                title="image-size"
+                name="image_size"
+              >
+                <option>Full Square (1024x1024)</option>
+                <option>Horizontal Rectangle (1024x768)</option>
+                <option selected>Square (512x512)</option>
+                <option>Small Rectangle (512x1024)</option>
+                <option>Wide Banner (1024x512)</option>
+                <option>Vertical Rectangle (768x1024)</option>
+              </select>
+            </div>
+          </div>
+          <div class="div-prompts border-updown-margin">
+            <label for="prompt">Prompt: </label>
+            <textarea
+              title="Type the discription of an image of your choice."
+              class="Pprompt prompt for-choice-prompt-p"
+              type="text"
+              id="prompt"
+              name="prompt"
+              placeholder="Enter your prompt"
+              cols="50%"
+              rows="4"
+              spellcheck="false"
+              required
+            ></textarea>
+          </div>
+          <div class="div-prompts border-updown-margin">
+            <label for="Negative prompt">Negative Prompt: </label>
+
+            <textarea
+              class="Nprompt prompt for-choice-prompt-p"
+              type="text"
+              id="Negative prompt"
+              rows="2"
+              placeholder="Enter your Negative prompt"
+              spellcheck="false"
+              name="negative_prompt"
+            ></textarea>
+          </div>
+          <div class="div-steps border-updown-margin">
+            <label for="steps">Steps:</label>
+            <input
+              class="steps-input slider"
+              type="range"
+              id="steps"
+              name="steps"
+              min="1"
+              max="4"
+              value="4"
+            />
+            <p class="steps-p for-choice-prompt-p">4</p>
+          </div>
+
+          <div
+            class="div-cfg-seed common-flex-alignCenter border-updown-margin"
+          >
+            <div class="div-seed common-flex-alignCenter">
+              <label class="seed-label" for="seed">Seed:</label>
+              <input
+                class="seed-input slider"
+                type="range"
+                id="seed"
+                name="seed"
+                min="-1"
+                max="20"
+                value="-1"
+              />
+              <p class="seed-p for-choice-prompt-p">-1</p>
+            </div>
+          </div>
+          
+          <div class="form-btn common-flex-alignCenter border-updown-margin">
+            <input class="btn-reset" type="reset" value="Reset" />
+            <input class="btn-submit" type="submit" value="Submit" />
+          </div>`;
+  return markupFlux;
+};
