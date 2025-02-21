@@ -215,7 +215,7 @@ onAuthStateChanged(auth, (user) => {
     // console.log("User logged in:", user);
     firstrun(user);
   } else {
-    window.location.href = "index.html#signin";
+    window.location.href = "index.html";
   }
 });
 

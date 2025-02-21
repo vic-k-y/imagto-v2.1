@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/login.css" rel="stylesheet" />
+    <script defer type="module" src="js/login.js"></script>
+    <link href="img/white_on_trans.webp" rel="icon" type="image/webp" />
+    <title>Login</title>
+  </head>
+  <body class="login-body">
+    <div class="loading-div loading-div-inactive hanuman-bold">
+      <svg>
+        <text x="50%" y="50%" dy=".35em" text-anchor="middle">ImagTo</text>
+      </svg>
+    </div>
+    <div class="alert"></div>
+    <div class="container noto-sans-400">
+      <img class="logoImg" alt="logo" src="img/white_on_trans.webp" />
+      <div class="top-btns">
+        <button class="signup-btn-t btn noto-sans-400" type="button">
+          sign up
+        </button>
+        <button
+          class="signin-btn-t btn noto-sans-400 inactive-btn"
+          type="button"
+        >
+          sign in
+        </button>
+      </div>
+      <form class="signup-form active">
+        <div class="name-div common">
+          <label for="fullname">Full Name:</label>
+          <input
+            class="signup-name-input hanuman-regular"
+            id="fullname"
+            type="text"
+            required
+            placeholder="Enter your full name"
+          />
+        </div>
+        <div class="signup-email-div common">
+          <label for="email-signup">Email:</label>
+          <input
+            class="signup-email-input hanuman-regular"
+            id="email-signup"
+            type="email"
+            required
+            placeholder="Enter your Email"
+          />
+        </div>
+        <div class="signup-password-div common">
+          <label for="password-signup">password:</label>
+          <input
+            class="signup-password-input hanuman-regular"
+            id="password-signup"
+            type="password"
+            minlength="8"
+            maxlength="20"
+            required
+            placeholder="Enter your password"
+          />
+          <i class="far fa-eye" id="togglePassword"></i>
+        </div>
+        <button class="signup-btn-b btn noto-sans-400" type="submit">
+          Create Account
+        </button>
+      </form>
+      <form class="signin-form noto-sans-400 inactive">
+        <div class="signin-email-div common">
+          <label for="email-signin">Email:</label>
+          <input
+            class="signin-email-input hanuman-regular"
+            title="Email is required"
+            id="email-signin"
+            type="email"
+            required
+            placeholder="Enter your Email"
+          />
+        </div>
+        <div class="signin-password-div common">
+          <label for="password-signin">password:</label>
+          <input
+            class="signin-password-input hanuman-regular"
+            id="password-signin"
+            type="password"
+            required
+            placeholder="Enter your password"
+          />
+        </div>
+        <a class="forgot-pass" href="#">Forgot password ?</a>
+        <button class="signin-btn-b btn noto-sans-400" type="submit">
+          Login
+        </button>
+      </form>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
