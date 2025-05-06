@@ -50,171 +50,74 @@
       <h2 class="into-h2 noto-sans-400">Credit left:</h2>
       <p class="intro-credit-p for-choice-prompt-p">10</p>
     </div>
+
+    <div class="image-window hidden">
+      <div class="image-window2 box-shadow">
+        <!-- <img class="previous-image image" alt="img" src="img/image (2).png" /> -->
+        <div class="image-window-svg">
+          <svg
+            class="svg-close"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="{1.5}"
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            />
+          </svg>
+          <svg
+            class="svg-download"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="size-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12 2.25a.75.75 0 0 1 .75.75v11.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3a.75.75 0 0 1 .75-.75Zm-9 13.5a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
     <div class="app noto-sans-400">
       <div class="input border-updown-margin box-shadow">
         <div class="choose-model box-shadow hanuman-bold">
           <a class="choose-model-btn flex current-model">Flux Model</a>
           <a class="choose-model-btn other">Other Models</a>
         </div>
-        <form class="form flex">
-          <!--<div class="model-div border-updown-margin">
-            <label class="model-label" for="model-select"
-              >Choose a model: </label
-            ><select
-              class="model-choice for-choice-prompt-p"
-              id="model-select"
-              title="Select a AI model"
-              name="model"
-            >
-              <option selected>
-                Realistic_Vision_V5.0.safetensors [614d1063]
-              </option>
-            </select>
-          </div>
-
-          <div class="div-style-imgSize border-updown-margin">
-            <div class="div-style-preset">
-              <label class="style-preset-lable" for="style_preset-select"
-                >Select style:</label
-              ><select
-                class="style-preset for-choice-prompt-p"
-                id="style_preset-select"
-                title="select"
-                name="style_preset"
-              >
-                <option selected>photographic</option>
-              </select>
-            </div>
-            <div class="div-image-size">
-              <label class="image-size-label" for="image_size-select"
-                >Choose a image size: </label
-              ><select
-                class="image-size for-choice-prompt-p"
-                id="image_size-select"
-                title="image-size"
-                name="image_size"
-              >
-                <option>Full Square (1024x1024)</option>
-                <option>Horizontal Rectangle (1024x768)</option>
-                <option selected>Square (512x512)</option>
-                <option>Small Rectangle (512x1024)</option>
-                <option>Wide Banner (1024x512)</option>
-                <option>Vertical Rectangle (768x1024)</option>
-              </select>
-            </div>
-          </div>
-          <div class="div-prompts border-updown-margin">
-            <label for="prompt-select">Prompt: </label>
-            <textarea
-              title="Type the discription of an image of your choice."
-              class="Pprompt prompt for-choice-prompt-p"
-              type="text"
-              id="prompt-select"
-              name="prompt"
-              placeholder="Enter your prompt"
-              cols="50%"
-              rows="4"
-              spellcheck="false"
-              required
-            ></textarea>
-          </div>
-          <div class="div-prompts border-updown-margin">
-            <label for="negative_prompt-select">Negative Prompt: </label>
-
-            <textarea
-              class="Nprompt prompt for-choice-prompt-p"
-              type="text"
-              id="negative_prompt-select"
-              rows="2"
-              placeholder="Enter your Negative prompt"
-              spellcheck="false"
-              name="negative_prompt"
-            ></textarea>
-          </div>
-          <div class="div-steps border-updown-margin">
-            <label for="steps-select">Steps:</label>
-            <input
-              class="steps-input slider"
-              type="range"
-              id="steps-select"
-              name="steps"
-              min="1"
-              max="20"
-              value="15"
-            />
-            <p class="steps-p for-choice-prompt-p">15</p>
-          </div>
-
-          <div
-            class="div-cfg-seed common-flex-alignCenter border-updown-margin"
-          >
-            <div class="div-cfg common-flex-alignCenter">
-              <label class="cfg-label" for="cfg_scale-select">CFG-Scale:</label>
-              <input
-                class="cfg-input slider"
-                type="range"
-                id="cfg_scale-select"
-                name="cfg_scale"
-                min="0"
-                max="20"
-                value="7"
-              />
-              <p class="cfg-p for-choice-prompt-p">7</p>
-            </div>
-            <div class="div-seed common-flex-alignCenter">
-              <label class="seed-label" for="seed-select">Seed:</label>
-              <input
-                class="seed-input slider"
-                type="range"
-                id="seed-select"
-                name="seed"
-                min="-1"
-                max="20"
-                value="-1"
-              />
-              <p class="seed-p for-choice-prompt-p">-1</p>
-            </div>
-          </div>
-          <div
-            class="div-upscale-sampler common-flex-alignCenter border-updown-margin"
-          >
-            <div class="div-upscale common-flex-alignCenter">
-              <input
-                class="upscale-input for-choice-prompt-p"
-                type="checkbox"
-                id="upscale-select"
-                name="upscale"
-              />
-              <label class="upscale-label" for="upscale-select">upscale 2X</label>
-            </div>
-            <div class="div-sampler common-flex-alignCenter">
-              <label class="sampler-label" for="sampler-select">Select sampler:</label>
-              <select
-                class="sampler-input for-choice-prompt-p"
-                id="sampler-select"
-                title="sampler"
-                name="sampler"
-              >
-                <option>DDIM</option>
-                <option>Euler</option>
-                <option>Euler a</option>
-                <option>Heun</option>
-                <option>DPM++ SDE Karras</option>
-                <option selected>DPM++ 2M Karras</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-btn common-flex-alignCenter border-updown-margin">
-            <input class="btn-reset" type="reset" value="Reset" />
-            <input class="btn-submit" type="submit" value="Submit" />
-          </div>-->
-        </form>
+        <form class="form flex"></form>
       </div>
       <div class="output hanuman-bold">
         <div class="div-output border-updown-margin box-shadow">
-          <h2 class="output-h2">OUTPUT:</h2>
+          <div class="div-output-down">
+            <h2 class="output-h2">OUTPUT:</h2>
+            <svg
+              class="svg-download svg-download-hide"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="size-6"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2.25a.75.75 0 0 1 .75.75v11.69l3.22-3.22a.75.75 0 1 1 1.06 1.06l-4.5 4.5a.75.75 0 0 1-1.06 0l-4.5-4.5a.75.75 0 1 1 1.06-1.06l3.22 3.22V3a.75.75 0 0 1 .75-.75Zm-9 13.5a.75.75 0 0 1 .75.75v2.25a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5V16.5a.75.75 0 0 1 1.5 0v2.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V16.5a.75.75 0 0 1 .75-.75Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
           <div class="div-output-img">
-            <!-- <img class="image" alt="img" src="R.jpeg" /> -->
+            <!-- <img
+              class="previous-image image"
+              alt="img"
+              src="img/image (1).png"
+            /> -->
           </div>
         </div>
 

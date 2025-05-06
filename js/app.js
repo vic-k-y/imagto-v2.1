@@ -71,6 +71,7 @@ const navH2 = document.querySelector(".nav-h2");
 const signoutBtn = document.querySelector(".nav-signOut");
 
 const outImgPrt = document.querySelector(".div-output-img");
+const svgInImgPrt = document.querySelector(".div-output-down .svg-download");
 const previouImgPrt = document.querySelector(".div-previous-imgs");
 const previouImgPrtPara = document.querySelector(".div-previous-imgs p");
 const alert = document.querySelector(".alert");
@@ -82,6 +83,7 @@ const exampleSec = document.querySelector(".try");
 const introDiv = document.querySelector(".intro-div");
 const introPT = document.querySelector(".intro-div-top .intro-credit-p");
 const introPB = document.querySelector(".intro-div-below .intro-credit-p");
+// const btnReset = document.querySelector(".btn-reset");
 
 // const modelChoice = document.querySelector(".model-choice");
 // const stylePreset = document.querySelector(".style-preset");
@@ -97,7 +99,7 @@ const introPB = document.querySelector(".intro-div-below .intro-credit-p");
 // const cfgP = document.querySelector(".cfg-p");
 // const seedP = document.querySelector(".seed-p");
 
-outImgPrt.innerHTML = "<p>Type something and click submit.</p>";
+outImgPrt.innerHTML = "<p>Type some prompt and click submit.</p>";
 
 // ------------ Page basics ---------------
 
@@ -233,9 +235,16 @@ const setOutImgContent = function (src) {
   outImgPrt.innerHTML = "";
   const ele = document.createElement("img");
   ele.classList.add("image");
+  ele.setAttribute("name", `${userId}-${totalNoUsed + 1}`);
   ele.src = `data:image/jpeg;base64,${src}`;
   // outImgPrt.insertAdjacentElement("afterbegin", ele);
   outImgPrt.prepend(ele);
+  // showOrHideDownload(); // to show download button
+  if (outImgPrt.querySelector(".image")) {
+    setTimeout(() => {
+      showDownload();
+    }, 500);
+  }
   return ele;
 };
 
@@ -365,13 +374,19 @@ const getFilePreview = async function (imgId) {
 };
 
 // adding image to previous image block.
-const addImgToPreviousImg = async function (val, position = "afterbegin") {
+const addImgToPreviousImg = async function (
+  val,
+  position = "afterbegin",
+  imgNo = totalNoUsed
+) {
   try {
     if (previouImgPrtPara) previouImgPrtPara.remove();
     const img = document.createElement("img");
     img.classList.add("previous-image");
     img.classList.add("image");
     img.src = await val;
+    img.setAttribute("name", `${userId}-${imgNo}`);
+    // console.log(img);
     previouImgPrt.insertAdjacentElement(position, img);
   } catch (err) {
     throw err;
@@ -382,10 +397,10 @@ const addOnImgToPrevious = async function (userId, totalNoUsed) {
     return;
   }
   let j = 1;
-  for (let i = totalNoUsed; j <= 6 && i > 0; i--) {
+  for (let i = totalNoUsed; j <= 10 && i > 0; i--) {
     // try {
     const val = await getFilePreview(`${userId}-${i}`);
-    await addImgToPreviousImg(val, "beforeend");
+    await addImgToPreviousImg(val, "beforeend", i);
     j += 1;
     // } catch (err) {
     //   throw err;
@@ -394,13 +409,16 @@ const addOnImgToPrevious = async function (userId, totalNoUsed) {
 };
 
 // to download image - have to make click on the returned url.
-const downloadImgfromStorage = async function () {
+const downloadImgfromStorage = async function (fileId) {
   try {
     const result = storage.getFileDownload(
       "6767d17000118082fe1f", // bucketId
-      "royji" // fileId
+      fileId // fileId
     );
     // console.log("from download img from storage:", result);
+    const a = document.createElement("a");
+    a.href = result;
+    a.click();
     return result;
   } catch (err) {
     // console.log("error from download img from storage:", err.message);
@@ -482,7 +500,7 @@ form.addEventListener("submit", async (e) => {
   const isCurModalFlux = chooseModel
     .querySelector(".flex")
     .classList.contains("current-model");
-
+  hideDownload(); // hide download btn
   try {
     // from fetch image to prepend it to html element - getimage will do.
     const img = await Promise.race([
@@ -490,8 +508,12 @@ form.addEventListener("submit", async (e) => {
       timerInRace(50),
     ]);
     await (isCurModalFlux
-      ? addImgToPreviousImg(`data:image/jpeg;base64,${img}`)
-      : addImgToPreviousImg(img));
+      ? addImgToPreviousImg(
+          `data:image/jpeg;base64,${img}`,
+          "afterbegin",
+          totalNoUsed + 1
+        )
+      : addImgToPreviousImg(img, "afterbegin", totalNoUsed + 1));
     //updating totalnoused and limit both in local and db
     limit = limit - 1;
     totalNoUsed = totalNoUsed + 1;
@@ -512,10 +534,24 @@ form.addEventListener("submit", async (e) => {
 
 // reset btn ------------
 form.addEventListener("reset", (e) => {
-  outImgPrt.innerHTML = "<p>Type something and click submit.</p>";
+  requestAnimationFrame(() => {
+    // or we can use settimeout to acheive this result
+    // problem - when reset event happens the p tag values for slides not set to default values.
+    setSlider();
+    sliderToP();
+
+    if (
+      [...outImgPrt.childNodes]
+        .map((it) => String(it))
+        .includes("[object HTMLImageElement]")
+    ) {
+      hideDownload();
+      outImgPrt.innerHTML = "<p>Type some prompt and click submit.</p>"; //placed here so function works good.
+    }
+  });
 });
 // reset.addEventListener("click", (e) => {
-//   outImgPrt.innerHTML = "<p>Type something and click submit.</p>";
+//   outImgPrt.innerHTML = "<p>Type some prompt and click submit.</p>";
 // });
 
 // --------- signout btn ------
@@ -523,3 +559,66 @@ signoutBtn.addEventListener("click", () => {
   signoutUser();
 });
 // =============
+
+// ----------> download btn show or hide in img generation window<------------
+// const showOrHideDownload = function () {
+const showDownload = function () {
+  svgInImgPrt.classList.remove("svg-download-hide");
+};
+const hideDownload = function () {
+  svgInImgPrt.classList.add("svg-download-hide");
+};
+
+// --- download in img generated window
+svgInImgPrt.addEventListener("click", (e) => {
+  if (outImgPrt.querySelector(".image")) {
+    const attrbName = outImgPrt.querySelector(".image").getAttribute("name");
+    downloadImgfromStorage(attrbName); // download image
+  }
+});
+
+// ------ image scale to download -----
+const divImage = document.querySelector(".div-previous-imgs");
+const imageWindow = document.querySelector(".image-window");
+const imageWindow2 = document.querySelector(".image-window2");
+
+divImage.addEventListener("click", (es) => {
+  if (es.target.classList.contains("image")) {
+    // let imgUrl = new URL(es.target.src); //--
+    const imgCopy = es.target.cloneNode(true); // this will clone the img element
+
+    imageWindow.classList.remove("hidden");
+    imageWindow2.insertAdjacentElement("afterbegin", imgCopy);
+    // console.log(es.target.parentElement.classList.contains("img"));
+  }
+});
+
+// download btn in pop up window
+const popDownbtn = imageWindow2.querySelector(
+  ".image-window-svg .svg-download"
+);
+popDownbtn.addEventListener("click", (e) => {
+  const attrbtName = imageWindow2.querySelector(".image").getAttribute("name");
+  downloadImgfromStorage(attrbtName);
+});
+
+// image scale close
+const closeWindow = function () {
+  imageWindow2.querySelector(".image").remove();
+  imageWindow.classList.add("hidden");
+};
+
+const closebtn = document.querySelector(".svg-close");
+const downloadBtn = document.querySelector(".svg-download");
+
+closebtn.addEventListener("click", () => {
+  closeWindow();
+});
+imageWindow.addEventListener("click", (e) => {
+  if (e.target.parentElement !== imageWindow2 && e.target !== downloadBtn) {
+    closeWindow();
+  }
+});
+steps.addEventListener("change", () => {
+  stepsP.textContent = steps.value;
+});
