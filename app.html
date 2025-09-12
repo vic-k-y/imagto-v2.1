@@ -18,12 +18,13 @@
       rel="stylesheet"
     />
 
-    <link href="css/app.css" rel="stylesheet" />
-    <link href="css/media-queries.css" rel="stylesheet" />
+    <link href="src/css/app.css" rel="stylesheet" />
+    <link href="src/css/media-queries.css" rel="stylesheet" />
 
-    <script defer type="module" src="js/app.js"></script>
-    <link href="img/white_on_trans.webp" rel="icon" type="image/webp" />
-    <title>ImagTo</title>
+    <link href="public/img/white_on_trans.webp" rel="icon" type="image/webp" />
+    <title>ImagTo - Create AI Images with Flux Model</title>
+    <meta name="description" content="Generate stunning AI art with ImagTo's advanced Flux model. Enjoy free 10 daily credits for creating unique images easily." />
+    <meta name="keywords" content="AI image generator, free AI art tool, Flux model AI, create AI images, AI art creation" />
   </head>
   <body class="body">
     <div class="loading-div hanuman-bold">
@@ -53,7 +54,6 @@
 
     <div class="image-window hidden">
       <div class="image-window2 box-shadow">
-        <!-- <img class="previous-image image" alt="img" src="img/image (2).png" /> -->
         <div class="image-window-svg">
           <svg
             class="svg-close"
@@ -112,13 +112,7 @@
               />
             </svg>
           </div>
-          <div class="div-output-img">
-            <!-- <img
-              class="previous-image image"
-              alt="img"
-              src="img/image (1).png"
-            /> -->
-          </div>
+          <div class="div-output-img"></div>
         </div>
 
         <div
@@ -276,5 +270,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script defer type="module" src="src/js/app.js"></script>
   </body>
 </html>

@@ -6,48 +6,1423 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sriracha&display=swap"
       rel="stylesheet"
     />
-    <link href="img/white_on_trans.webp" rel="icon" type="image/webp" />
 
-    <link rel="stylesheet" href="css/index.css" />
-    <!-- <link rel="stylesheet" href="css/login.css" /> -->
-    <title>ImagTo</title>
+    <link rel="stylesheet" href="src/css/index.css" />
+    <link rel="icon" href="/other-img/white_on_trans.webp" type="image/webp" />
+
+    <title>Free AI Image Generator - Create Stunning Art with Flux Model</title>
+    <meta
+      name="description"
+      content="Generate stunning AI art for free with 10 daily credits using the advanced Flux model. Create unique images easily with our global AI image generation tool."
+    />
+    <meta
+      name="keywords"
+      content="AI image generator, free AI art tool, Flux model AI, create AI images, AI art generator, free image creation"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://imagto.tech" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://imagto.tech" />
+    <meta
+      property="og:title"
+      content="Free AI Image Generator - Create Stunning Art with Flux Model"
+    />
+    <meta
+      property="og:description"
+      content="Generate stunning AI art for free with 10 daily credits using the advanced Flux model. Create unique images easily with our global AI image generation tool."
+    />
+    <meta
+      property="og:image"
+      content="https://imagto.techother-img/imagto-landing-hero.webp"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://imagto.tech" />
+    <meta
+      name="twitter:title"
+      content="Free AI Image Generator - Create Stunning Art with Flux Model"
+    />
+    <meta
+      name="twitter:description"
+      content="Generate stunning AI art for free with 10 daily credits using the advanced Flux model. Create unique images easily with our global AI image generation tool."
+    />
+    <meta
+      name="twitter:image"
+      content="https://imagto.techother-img/imagto-landing-hero.webp"
+    />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "ImagTo",
+        "url": "https://imagto.tech",
+        "description": "Generate stunning AI art for free with 10 daily credits using the advanced Flux model. Create unique images easily with our global AI image generation tool.",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "AI Image Generator",
+        "operatingSystem": "Web Browser",
+        "author": {
+          "@type": "Organization",
+          "name": "ImagTo"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free 10 daily credits for AI image generation"
+        },
+        "featureList": [
+          "AI-powered image generation",
+          "Flux model technology",
+          "HD/4K output",
+          "Free daily credits",
+          "Customizable prompts"
+        ]
+      }
+    </script>
   </head>
-  <body>
-    <div class="images">
-      <img
-        class="image image-1"
-        src="img/imagto_demo_0.jpeg"
-        alt="Imagto app image"
-      />
-      <img
-        class="image image-2"
-        src="img/imagto_demo_1.jpeg"
-        alt="Imagto generated image"
-      />
-      <img
-        class="image image-3"
-        src="img/imagto_demo.jpeg"
-        alt="Imagto generated image"
-      />
+  <body class="body">
+    <main role="main">
+      <section id="hero-section" class="hero-section">
+        <nav class="navbar">
+          <div class="logo-div">
+            <img
+              class="logo"
+              src="/other-img/white_on_trans.webp"
+              alt="imagto logo"
+            />
+            <h2>ImagTo</h2>
+          </div>
+          <div class="nav-items">
+            <ul class="nav-links">
+              <li class="nav-link"><a href="#hero-section">Home</a></li>
+              <li class="nav-link"><a href="#preview-div">preview</a></li>
+              <li class="nav-link"><a href="#features-div">features</a></li>
+              <li class="nav-link"><a href="#use-case-div">use case</a></li>
+            </ul>
+          </div>
+          <div class="nav-buttons">
+            <a class="nav-login sriracha-regular" href="login.html#signin"
+              >login</a
+            >
+            <a
+              class="nav-signup btn-primary sriracha-regular"
+              href="login.html#signup"
+              >signup</a
+            >
+          </div>
+        </nav>
+        <div class="hero">
+          <img
+            class="hero-img desktop-hero"
+            src="other-img/imagto-landing-hero.webp"
+            alt="ImagTo AI art generation platform - desktop view"
+          />
+          <img
+            class="hero-img mobile-hero"
+            src="other-img/imagto-mobile.webp"
+            alt="ImagTo AI art generation platform - mobile view"
+          />
+          <div class="hero-text">
+            <h1 class="hero-h1">Create Art at the Speed of Thought</h1>
+            <p class="hero-p">
+              Type your Ideas, and Watch AI bring it to Life - Faster than Ever.
+            </p>
+            <div class="hero-buttons">
+              <a
+                class="hero-btn btn-primary sriracha-regular"
+                href="login.html#signup"
+                >try for free</a
+              >
+              <div>
+                <a class="hero-preview-btn sriracha-regular" href="#preview-div"
+                  >preview
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="size-5 hero-preview-icon"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 3a.75.75 0 0 1 .75.75v10.638l3.96-4.158a.75.75 0 1 1 1.08 1.04l-5.25 5.5a.75.75 0 0 1-1.08 0l-5.25-5.5a.75.75 0 1 1 1.08-1.04l3.96 4.158V3.75A.75.75 0 0 1 10 3Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <p class="hero-text-p">Free 10 credits daily</p>
+          </div>
+        </div>
+      </section>
+      <section id="preview-div" class="preview-div">
+        <div class="preview-img preview-img-1">
+          <!-- First set of images -->
+          <img
+            src="/page-img/img-1.webp"
+            alt="AI generated fantasy landscape with mystical creatures and ethereal lighting"
+          />
+          <img
+            src="/page-img/img-2.webp"
+            alt="Abstract digital art featuring vibrant colors and geometric patterns"
+          />
+          <img
+            src="/page-img/img-3.webp"
+            alt="Realistic portrait of a person with dramatic lighting and artistic composition"
+          />
+          <img
+            src="/page-img/img-4.webp"
+            alt="Futuristic cityscape with neon lights and cyberpunk aesthetic"
+          />
+          <img
+            src="/page-img/img-5.webp"
+            alt="Nature scene with detailed flora and fauna in photorealistic style"
+          />
+          <img
+            src="/page-img/img-6.webp"
+            alt="Character design showcasing detailed costume and fantasy elements"
+          />
+          <img
+            src="/page-img/img-7.webp"
+            alt="Architectural visualization with modern building design and lighting"
+          />
+          <img
+            src="/page-img/img-8.webp"
+            alt="Digital painting of scenic mountain landscape with atmospheric perspective"
+          />
+          <img
+            src="/page-img/img-9.webp"
+            alt="Creative concept art featuring imaginative creatures and environments"
+          />
+          <img
+            src="/page-img/img-10.webp"
+            alt="Product visualization with professional studio lighting and composition"
+          />
+          <img
+            src="/page-img/img-11.webp"
+            alt="Stylized artwork combining traditional and digital art techniques"
+          />
+          <img
+            src="/page-img/img-12.webp"
+            alt="Fashion design concept with detailed textile patterns and colors"
+          />
+          <img
+            src="/page-img/img-13.webp"
+            alt="Environmental concept art with rich atmospheric details and mood"
+          />
+          <!-- Duplicate set for seamless infinite scroll -->
+          <img
+            src="/page-img/img-1.webp"
+            alt="AI generated fantasy landscape with mystical creatures and ethereal lighting"
+          />
+          <img
+            src="/page-img/img-2.webp"
+            alt="Abstract digital art featuring vibrant colors and geometric patterns"
+          />
+          <img
+            src="/page-img/img-3.webp"
+            alt="Realistic portrait of a person with dramatic lighting and artistic composition"
+          />
+          <img
+            src="/page-img/img-4.webp"
+            alt="Futuristic cityscape with neon lights and cyberpunk aesthetic"
+          />
+          <img
+            src="/page-img/img-5.webp"
+            alt="Nature scene with detailed flora and fauna in photorealistic style"
+          />
+          <img
+            src="/page-img/img-6.webp"
+            alt="Character design showcasing detailed costume and fantasy elements"
+          />
+          <img
+            src="/page-img/img-7.webp"
+            alt="Architectural visualization with modern building design and lighting"
+          />
+          <img
+            src="/page-img/img-8.webp"
+            alt="Digital painting of scenic mountain landscape with atmospheric perspective"
+          />
+          <img
+            src="/page-img/img-9.webp"
+            alt="Creative concept art featuring imaginative creatures and environments"
+          />
+          <img
+            src="/page-img/img-10.webp"
+            alt="Product visualization with professional studio lighting and composition"
+          />
+          <img
+            src="/page-img/img-11.webp"
+            alt="Stylized artwork combining traditional and digital art techniques"
+          />
+          <img
+            src="/page-img/img-12.webp"
+            alt="Fashion design concept with detailed textile patterns and colors"
+          />
+          <img
+            src="/page-img/img-13.webp"
+            alt="Environmental concept art with rich atmospheric details and mood"
+          />
+        </div>
+        <div class="preview-img preview-img-2">
+          <img
+            src="/page-img/img-14.webp"
+            alt="Surreal artistic composition blending reality with imagination"
+          />
+          <img
+            src="/page-img/img-15.webp"
+            alt="Technical illustration with precise details and engineering aesthetics"
+          />
+          <img
+            src="/page-img/img-16.webp"
+            alt="Food photography with professional styling and appetizing presentation"
+          />
+          <img
+            src="/page-img/img-17.webp"
+            alt="Wildlife photography capturing natural behavior and habitat details"
+          />
+          <img
+            src="/page-img/img-18.webp"
+            alt="Surreal landscape with vibrant colors and dreamlike elements"
+          />
+          <img
+            src="/page-img/img-19.webp"
+            alt="Sports action captured with dynamic movement and energy"
+          />
+          <img
+            src="/page-img/img-20.webp"
+            alt="Interior design visualization with modern furniture and lighting"
+          />
+          <img
+            src="/page-img/img-21.webp"
+            alt="Abstract expressionist artwork with bold colors and brush strokes"
+          />
+          <img
+            src="/page-img/img-22.webp"
+            alt="Vintage-style poster design with retro typography and aesthetics"
+          />
+          <img
+            src="/page-img/img-23.webp"
+            alt="Scientific visualization of molecular structures and processes"
+          />
+          <img
+            src="/page-img/img-24.webp"
+            alt="Minimalist design showcasing clean lines and negative space"
+          />
+          <img
+            src="/page-img/img-25.webp"
+            alt="Cultural artwork inspired by traditional patterns and motifs"
+          />
+          <img
+            src="/page-img/img-26.webp"
+            alt="Dramatic black and white photography with strong contrast"
+          />
+          <!-- dulicate set -->
+          <img
+            src="/page-img/img-14.webp"
+            alt="Surreal artistic composition blending reality with imagination"
+          />
+          <img
+            src="/page-img/img-15.webp"
+            alt="Technical illustration with precise details and engineering aesthetics"
+          />
+          <img
+            src="/page-img/img-16.webp"
+            alt="Food photography with professional styling and appetizing presentation"
+          />
+          <img
+            src="/page-img/img-17.webp"
+            alt="Wildlife photography capturing natural behavior and habitat details"
+          />
+          <img
+            src="/page-img/img-18.webp"
+            alt="Surreal landscape with vibrant colors and dreamlike elements"
+          />
+          <img
+            src="/page-img/img-19.webp"
+            alt="Sports action captured with dynamic movement and energy"
+          />
+          <img
+            src="/page-img/img-20.webp"
+            alt="Interior design visualization with modern furniture and lighting"
+          />
+          <img
+            src="/page-img/img-21.webp"
+            alt="Abstract expressionist artwork with bold colors and brush strokes"
+          />
+          <img
+            src="/page-img/img-22.webp"
+            alt="Vintage-style poster design with retro typography and aesthetics"
+          />
+          <img
+            src="/page-img/img-23.webp"
+            alt="Scientific visualization of molecular structures and processes"
+          />
+          <img
+            src="/page-img/img-24.webp"
+            alt="Minimalist design showcasing clean lines and negative space"
+          />
+          <img
+            src="/page-img/img-25.webp"
+            alt="Cultural artwork inspired by traditional patterns and motifs"
+          />
+          <img
+            src="/page-img/img-26.webp"
+            alt="Dramatic black and white photography with strong contrast"
+          />
+        </div>
+        <div class="preview-img preview-img-3">
+          <img
+            loading="lazy"
+            src="/page-img/img-27.webp"
+            alt="Gaming character design with detailed armor and weapon aesthetics"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-28.webp"
+            alt="Space exploration artwork featuring cosmic scenes and celestial bodies"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-29.webp"
+            alt="Botanical illustration with scientific accuracy and artistic beauty"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-30.webp"
+            alt="Urban street art with graffiti style and contemporary themes"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-31.webp"
+            alt="Historical recreation with period-accurate details and atmosphere"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-32.webp"
+            alt="Medical illustration combining scientific accuracy with visual clarity"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-33.webp"
+            alt="Fantasy creature design with mythological inspiration and detail"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-34.webp"
+            alt="Automotive design concept with sleek lines and modern aesthetics"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-35.webp"
+            alt="Jewelry design rendering with precious metals and gem details"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-36.webp"
+            alt="Textile pattern design with intricate geometric and organic motifs"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-37.webp"
+            alt="Movie poster concept with dramatic composition and typography"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-38.webp"
+            alt="Landscape painting capturing natural beauty and atmospheric mood"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-39.webp"
+            alt="Logo design concept with modern branding and visual identity elements"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-40.webp"
+            alt="Editorial illustration for magazine or book publication use"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-41.webp"
+            alt="Packaging design with commercial appeal and brand recognition"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-42.webp"
+            alt="Social media graphics optimized for digital platform engagement"
+          />
+          <!-- duplicate set -->
+          <img
+            loading="lazy"
+            src="/page-img/img-27.webp"
+            alt="Gaming character design with detailed armor and weapon aesthetics"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-28.webp"
+            alt="Space exploration artwork featuring cosmic scenes and celestial bodies"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-29.webp"
+            alt="Botanical illustration with scientific accuracy and artistic beauty"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-30.webp"
+            alt="Urban street art with graffiti style and contemporary themes"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-31.webp"
+            alt="Historical recreation with period-accurate details and atmosphere"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-32.webp"
+            alt="Medical illustration combining scientific accuracy with visual clarity"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-33.webp"
+            alt="Fantasy creature design with mythological inspiration and detail"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-34.webp"
+            alt="Automotive design concept with sleek lines and modern aesthetics"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-35.webp"
+            alt="Jewelry design rendering with precious metals and gem details"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-36.webp"
+            alt="Textile pattern design with intricate geometric and organic motifs"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-37.webp"
+            alt="Movie poster concept with dramatic composition and typography"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-38.webp"
+            alt="Landscape painting capturing natural beauty and atmospheric mood"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-39.webp"
+            alt="Logo design concept with modern branding and visual identity elements"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-40.webp"
+            alt="Editorial illustration for magazine or book publication use"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-41.webp"
+            alt="Packaging design with commercial appeal and brand recognition"
+          />
+          <img
+            loading="lazy"
+            src="/page-img/img-42.webp"
+            alt="Social media graphics optimized for digital platform engagement"
+          />
+        </div>
+      </section>
+      <section id="features-div" class="features-div">
+        <div class="features-header">
+          <span class="features-badge">Powerful Features</span>
+          <h2 class="features-h1">Everything You Need to Create</h2>
+          <p class="features-subtitle">
+            Unlock your creativity with cutting-edge AI technology and
+            professional-grade tools
+          </p>
+        </div>
+        <div class="features-container">
+          <div class="feature-card" data-feature="creative">
+            <div class="feature-number">01</div>
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">🎨</div>
+              <div class="feature-glow"></div>
+            </div>
+            <div class="features-content">
+              <h2 class="feature-title">Unlimited Creative Styles</h2>
+              <p class="feature-description">
+                From realistic photography to anime, 3D, abstract art, and more
+                — generate in any style you imagine with precision and
+                creativity.
+              </p>
+              <div class="feature-stats">
+                <span class="feature-stat">50+ Styles Available</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-card" data-feature="quality">
+            <div class="feature-number">02</div>
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">🖼️</div>
+              <div class="feature-glow"></div>
+            </div>
+            <div class="features-content">
+              <h2 class="feature-title">Stunning Quality Output</h2>
+              <p class="feature-description">
+                Download images in HD and 4K resolution, perfect for personal or
+                professional use with crystal-clear details.
+              </p>
+              <div class="feature-stats">
+                <span class="feature-stat">Up to 4K Resolution</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-card" data-feature="controls">
+            <div class="feature-number">03</div>
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">⚙️</div>
+              <div class="feature-glow"></div>
+            </div>
+            <div class="features-content">
+              <h2 class="feature-title">Customizable Prompts & Controls</h2>
+              <p class="feature-description">
+                Fine-tune details with advanced text prompts, aspect ratios,
+                styles, and filters to get exactly what you want every time.
+              </p>
+              <div class="feature-stats">
+                <span class="feature-stat">Advanced AI Controls</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-card" data-feature="sharing">
+            <div class="feature-number">04</div>
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">📥</div>
+              <div class="feature-glow"></div>
+            </div>
+            <div class="features-content">
+              <h2 class="feature-title">Easy Save & Share</h2>
+              <p class="feature-description">
+                Download instantly in multiple formats and share directly on
+                social media and creative platforms with one click.
+              </p>
+              <div class="feature-stats">
+                <span class="feature-stat">Instant Downloads</span>
+              </div>
+            </div>
+          </div>
+          <div class="feature-card feature-card-wide" data-feature="ai-model">
+            <div class="feature-number">05</div>
+            <div class="feature-icon-wrapper">
+              <div class="feature-icon">🤖</div>
+              <div class="feature-glow"></div>
+            </div>
+            <div class="features-content">
+              <h2 class="feature-title">Advanced Flux Image Model</h2>
+              <p class="feature-description">
+                Powered by state-of-the-art AI technology for exceptional
+                results, creative accuracy, and industry-leading image
+                generation capabilities.
+              </p>
+              <div class="feature-stats">
+                <span class="feature-stat">Latest AI Technology</span>
+                <span class="feature-stat">99.9% Uptime</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="use-case-div" class="use-case-div">
+        <div class="use-case-header">
+          <h2 class="use-case-h1">Use Cases</h2>
+          <p class="use-case-subtitle">
+            Discover how ImagTo transforms creativity across various industries
+            and personal projects
+          </p>
+        </div>
+        <div class="use-case-container">
+          <div class="use-case-card" data-category="creative">
+            <div class="use-case-number">01</div>
+            <div class="use-case-images">
+              <div class="use-case-images-left">
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-1.webp"
+                  alt="AI-generated artwork for artists using Flux model"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-2.webp"
+                  alt="Creative AI art for designers with Flux technology"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-3.webp"
+                  alt="Digital art created with AI Flux model for artists"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-4.webp"
+                  alt="AI-generated illustrations using Flux model"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-5.webp"
+                  alt="Flux AI model artwork for creative professionals"
+                />
+                <!-- Duplicate for seamless scroll -->
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-1.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-2.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-3.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-4.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/artists/artist-5.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="use-case-content">
+              <div class="use-case-badge">Creative Professionals</div>
+              <h2 class="use-case-title">Artists & Designers</h2>
+              <p class="use-case-description">
+                Bring your creative visions to life with unique, AI-generated
+                art for inspiration or final pieces. Perfect for concept art,
+                illustrations, and creative exploration.
+              </p>
+              <div class="use-case-stats">
+                <div class="stat-item">
+                  <span class="stat-number">95%</span>
+                  <span class="stat-label">Faster Creation</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">∞</span>
+                  <span class="stat-label">Unlimited Ideas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="use-case-card" data-category="business">
+            <div class="use-case-number use-case-number-right">02</div>
+            <div class="use-case-content">
+              <div class="use-case-badge">Business Growth</div>
+              <h2 class="use-case-title">Marketers & Ad Creators</h2>
+              <p class="use-case-description">
+                Create eye-catching visuals for campaigns, social media, and ads
+                in minutes. Scale your visual content production without
+                compromise on quality.
+              </p>
+              <div class="use-case-stats">
+                <div class="stat-item">
+                  <span class="stat-number">10x</span>
+                  <span class="stat-label">Content Volume</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">80%</span>
+                  <span class="stat-label">Cost Reduction</span>
+                </div>
+              </div>
+            </div>
+            <div class="use-case-images">
+              <div class="use-case-images-right">
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-1.webp"
+                  alt="AI-generated marketing visuals using Flux model"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-2.webp"
+                  alt="Flux AI art for ad campaigns"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-3.webp"
+                  alt="Marketing graphics created with AI Flux technology"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-4.webp"
+                  alt="AI image generation for marketers with Flux model"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-5.webp"
+                  alt="Flux model AI art for business marketing"
+                />
+                <!-- Duplicate for seamless scroll -->
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-1.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-2.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-3.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-4.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/marketers/marketers-5.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="use-case-card" data-category="social">
+            <div class="use-case-number">03</div>
+            <div class="use-case-images">
+              <div class="use-case-images-left">
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-1.webp"
+                  alt="AI-generated social media content with Flux model"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-2.webp"
+                  alt="Flux AI art for Instagram posts"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-3.webp"
+                  alt="Social media graphics created using AI Flux technology"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-4.webp"
+                  alt="AI image generation for social media with Flux model"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-5.webp"
+                  alt="Flux model AI visuals for online sharing"
+                />
+                <!-- Duplicate for seamless scroll -->
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-1.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-2.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-3.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-4.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/socials/socials-5.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="use-case-content">
+              <div class="use-case-badge">Social Influence</div>
+              <h2 class="use-case-title">Social Media Content</h2>
+              <p class="use-case-description">
+                Generate unique images to enhance posts, stories, and profiles
+                that stand out. Build your brand presence with consistently
+                engaging visuals.
+              </p>
+              <div class="use-case-stats">
+                <div class="stat-item">
+                  <span class="stat-number">300%</span>
+                  <span class="stat-label">More Engagement</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">24/7</span>
+                  <span class="stat-label">Content Ready</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="use-case-card" data-category="personal">
+            <div class="use-case-number use-case-number-right">04</div>
+            <div class="use-case-content">
+              <div class="use-case-badge">Personal Expression</div>
+              <h2 class="use-case-title">Personal Wallpapers & Fun</h2>
+              <p class="use-case-description">
+                Design custom wallpapers, gifts, and fun art pieces for personal
+                enjoyment. Express your personality through unique digital
+                creations.
+              </p>
+              <div class="use-case-stats">
+                <div class="stat-item">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Personalized</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">∞</span>
+                  <span class="stat-label">Possibilities</span>
+                </div>
+              </div>
+            </div>
+            <div class="use-case-images">
+              <div class="use-case-images-right">
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-1.webp"
+                  alt="AI-generated personal artwork with Flux model"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-2.webp"
+                  alt="Flux AI art for custom wallpapers"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-3.webp"
+                  alt="Personal graphics created using AI Flux technology"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-4.webp"
+                  alt="AI image generation for personal use with Flux model"
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-5.webp"
+                  alt="Flux model AI creations for fun and personalization"
+                />
+                <!-- Duplicate for seamless scroll -->
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-1.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-2.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-3.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-4.webp"
+                  alt=""
+                />
+                <img
+                  loading="lazy"
+                  class="use-case-img"
+                  src="/personals/personals-5.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <div id="cta-section" class="cta-section">
+        <div class="cta-background-effects"></div>
+        <div class="cta-container">
+          <div class="cta-content">
+            <div class="cta-stats">
+              <div class="cta-stat-item">
+                <span class="cta-stat-number">2000+</span>
+                <span class="cta-stat-label">Images Created</span>
+              </div>
+              <div class="cta-stat-divider"></div>
+              <div class="cta-stat-item">
+                <span class="cta-stat-number">10</span>
+                <span class="cta-stat-label">Free Credits Daily</span>
+              </div>
+            </div>
+
+            <h2 class="cta-heading">Ready to Transform Your Ideas into Art?</h2>
+            <p class="cta-description">
+              Join thousands of creators who are already bringing their visions
+              to life with ImagTo's AI-powered image generation.
+            </p>
+
+            <div class="cta-features">
+              <div class="cta-feature">
+                <div class="cta-feature-icon">⚡</div>
+                <span>Instant Generation</span>
+              </div>
+              <div class="cta-feature">
+                <div class="cta-feature-icon">🎨</div>
+                <span>Unlimited Creativity</span>
+              </div>
+              <div class="cta-feature">
+                <div class="cta-feature-icon">💎</div>
+                <span>Professional Quality</span>
+              </div>
+            </div>
+
+            <div class="cta-buttons">
+              <a class="cta-button primary" href="login.html#signup"
+                >Start Creating Now</a
+              >
+              <button class="cta-button secondary" href="#features-div">
+                Learn More
+              </button>
+            </div>
+
+            <div class="cta-trust-indicators">
+              <div class="trust-item">
+                <span class="trust-icon">🔒</span>
+                <span>Secure & Private</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-icon">⭐</span>
+                <span>4.9/5 Rating</span>
+              </div>
+              <div class="trust-item">
+                <span class="trust-icon">🚀</span>
+                <span>No Credit card Required</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-main">
+          <!-- Brand Section -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img
+                src="other-img/white_on_trans.webp"
+                alt="ImagTo Logo"
+                class="footer-logo-img"
+              />
+              <h3>ImagTo</h3>
+            </div>
+            <p class="footer-description">
+              Transform your ideas into stunning AI-generated images with the
+              power of creativity and technology.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-link-list">
+              <li><a href="#" class="footer-link">About</a></li>
+              <li><a href="#" class="footer-link">Contact</a></li>
+              <li>
+                <a
+                  href="#"
+                  class="footer-link modal-trigger"
+                  data-modal="privacy"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link modal-trigger" data-modal="terms"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer-link modal-trigger"
+                  data-modal="disclaimer"
+                  >AI Disclaimer</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Features Links -->
+          <div class="footer-links">
+            <h4 class="footer-title">Features</h4>
+            <ul class="footer-link-list">
+              <li>
+                <a href="#features-div" class="footer-link"
+                  >AI Image Generation</a
+                >
+              </li>
+              <li>
+                <a href="#features-div" class="footer-link">Custom Styles</a>
+              </li>
+              <li>
+                <a href="#features-div" class="footer-link">High Resolution</a>
+              </li>
+              <li>
+                <a href="#features-div" class="footer-link">Commercial Use</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Links -->
+          <div class="footer-social">
+            <h4 class="footer-title">Follow Us</h4>
+            <div class="social-links">
+              <a href="#" class="social-link" aria-label="Twitter">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Instagram">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="LinkedIn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                  />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a href="#" class="social-link" aria-label="Discord">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.010c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            <p>&copy; 2025 ImagTo. All rights reserved.</p>
+          </div>
+          <div class="footer-credits">
+            <span class="developed-by"
+              >Developed by <strong>Vignesh</strong></span
+            >
+            <a href="#" class="hire-me-link">Hire Me</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal Windows -->
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Privacy Policy</h2>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Effective Date:</strong> September 10, 2025</p>
+
+          <p>
+            ImagTo ("we," "our," or "us") respects your privacy. This Privacy
+            Policy explains how we collect, use, and protect your personal
+            information when you use our website and services.
+          </p>
+
+          <h3>1. Information We Collect</h3>
+          <p>We may collect:</p>
+          <ul>
+            <li>
+              <strong>Account Information:</strong> name, email, and login
+              details.
+            </li>
+            <li>
+              <strong>Prompts & Images:</strong> text inputs you provide and
+              images generated.
+            </li>
+            <li>
+              <strong>Payment Details:</strong> processed securely through
+              third-party providers (we do not store payment card information).
+            </li>
+            <li>
+              <strong>Technical Data:</strong> IP address, browser type, device
+              info, and cookies for analytics and performance.
+            </li>
+          </ul>
+
+          <h3>2. How We Use Your Information</h3>
+          <p>We use your data to:</p>
+          <ul>
+            <li>Provide and improve our services.</li>
+            <li>Process your requests and generate images.</li>
+            <li>Analyze usage to enhance performance.</li>
+            <li>Communicate updates and respond to support queries.</li>
+          </ul>
+
+          <h3>3. Sharing of Information</h3>
+          <p>
+            We do not sell or rent personal data. We may share information with:
+          </p>
+          <ul>
+            <li>Service providers (e.g., hosting, payment processors).</li>
+            <li>Legal authorities if required by law.</li>
+          </ul>
+
+          <h3>4. Data Security</h3>
+          <p>
+            We implement reasonable security measures to protect your
+            information, but we cannot guarantee 100% security.
+          </p>
+
+          <h3>5. User Rights</h3>
+          <p>
+            You may request to access, correct, or delete your personal data by
+            contacting us at support@imagto.com.
+          </p>
+
+          <h3>6. Cookies</h3>
+          <p>
+            We use cookies for login sessions, preferences, and analytics. You
+            can disable cookies in your browser settings.
+          </p>
+
+          <h3>7. Changes to This Policy</h3>
+          <p>
+            We may update this Privacy Policy from time to time. Updates will be
+            posted on this page with a revised date.
+          </p>
+
+          <h3>8. Contact Us</h3>
+          <p>If you have questions, please contact us at support@imagto.com.</p>
+        </div>
+      </div>
     </div>
-    <div class="info">
-      <img class="logoImg" alt="logo" src="img/white_on_trans.webp" />
-      <h2>Transform Your Words into Stunning Visuals in Seconds.</h2>
-      <!-- <p>
-        Unleash the power of your imagination with our cutting-edge image
-        generation models. Simply describe what you envision, and watch as your
-        words come to life in breathtaking visuals. Whether you’re creating
-        artwork, designing marketing materials, or bringing a concept to life,
-        our tool delivers high-quality images that match your vision. No design
-        skills required—just your creativity!
-      </p> -->
-      <div>
-        <a href="login.html#signup">Create Account</a>
-        <a href="login.html#signin">Sign In</a>
+
+    <!-- Terms & Conditions Modal -->
+    <div id="terms-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Terms & Conditions</h2>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Effective Date:</strong> September 10, 2025</p>
+
+          <p>
+            Welcome to ImagTo! By using our website and services, you agree to
+            the following terms:
+          </p>
+
+          <h3>1. Eligibility</h3>
+          <p>
+            You must be at least 13 years old (or 18 in some jurisdictions) to
+            use our services.
+          </p>
+
+          <h3>2. User Responsibilities</h3>
+          <ul>
+            <li>You agree to use the service only for lawful purposes.</li>
+            <li>You must not upload harmful, illegal, or offensive prompts.</li>
+            <li>
+              You are responsible for the images you create and how you use
+              them.
+            </li>
+          </ul>
+
+          <h3>3. Generated Content</h3>
+          <ul>
+            <li>
+              <strong>Ownership:</strong> You retain rights to the images you
+              generate, unless otherwise stated.
+            </li>
+            <li>
+              <strong>Usage:</strong> You may use generated images for personal
+              or commercial purposes, subject to these terms.
+            </li>
+            <li>
+              <strong>Disclaimer:</strong> Generated images may be inaccurate,
+              unexpected, or inappropriate. We do not guarantee results.
+            </li>
+          </ul>
+
+          <h3>4. Prohibited Uses</h3>
+          <p>You may not:</p>
+          <ul>
+            <li>
+              Use the service to create illegal, hateful, violent, or adult
+              content.
+            </li>
+            <li>Attempt to hack, disrupt, or misuse the service.</li>
+            <li>
+              Use the service to infringe on others' rights (e.g., copyrighted
+              material).
+            </li>
+          </ul>
+
+          <h3>5. Payments & Refunds</h3>
+          <ul>
+            <li>Some features may require payment or credits.</li>
+            <li>Payments are processed by third-party providers.</li>
+            <li>
+              Refunds, if applicable, are handled on a case-by-case basis.
+            </li>
+          </ul>
+
+          <h3>6. Limitation of Liability</h3>
+          <p>Our service is provided "as is." We are not responsible for:</p>
+          <ul>
+            <li>Misuse of generated content.</li>
+            <li>Losses or damages caused by use of the service.</li>
+          </ul>
+
+          <h3>7. Termination</h3>
+          <p>We may suspend or terminate accounts that violate these terms.</p>
+
+          <h3>8. Changes to Terms</h3>
+          <p>
+            We may update these Terms from time to time. Continued use of the
+            service means you accept any changes.
+          </p>
+
+          <h3>9. Governing Law</h3>
+          <p>These Terms are governed by the laws of United States.</p>
+
+          <h3>10. Contact</h3>
+          <p>For questions, email us at support@imagto.com.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Disclaimer Modal -->
+    <div id="disclaimer-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>AI Disclaimer</h2>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>
+            The images generated by <strong>ImagTo</strong> are created using
+            artificial intelligence. While we strive for accuracy and
+            creativity, the results may sometimes be unpredictable, inaccurate,
+            or inappropriate.
+          </p>
+
+          <p>
+            We do not guarantee that generated content will be unique,
+            error-free, or free of copyright concerns.
+          </p>
+
+          <p>Users are solely responsible for how they use generated images.</p>
+
+          <p>
+            By using this service, you acknowledge that some outputs may not
+            always align with your intent.
+          </p>
+        </div>
       </div>
     </div>
   </body>
+  <script type="module" defer src="src/js/index.js"></script>
 </html>

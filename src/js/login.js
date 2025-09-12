@@ -23,6 +23,7 @@ import {
   signOut,
   sendPasswordResetEmail,
 } from "firebase/auth";
+
 import { Client, Databases, ID } from "appwrite";
 
 const signupT = document.querySelector(".signup-btn-t");

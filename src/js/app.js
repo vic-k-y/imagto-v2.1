@@ -217,7 +217,7 @@ onAuthStateChanged(auth, (user) => {
     // console.log("User logged in:", user);
     firstrun(user);
   } else {
-    window.location.href = "index.html";
+    window.location.href = "login.html#signin";
   }
 });
 
@@ -317,8 +317,8 @@ const getdocument = async function (uid) {
 const updatedoc = async function (uid, object) {
   try {
     const result = await db.updateDocument(
-      "67681cd2001efa31fbc0", // databaseId
-      "67681cdd003a7be4ad5e", // collectionId
+      databaseId, // databaseId
+      collectionId, // collectionId
       uid, // documentId
       object, // data (optional)
       [] // permissions (optional)
